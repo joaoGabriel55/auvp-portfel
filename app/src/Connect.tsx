@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { Bookmark, KeyRound } from 'lucide-react'
+import { Bookmark, Eye, KeyRound } from 'lucide-react'
 import { token } from './api'
+import { DEMO_TOKEN } from './demo'
 import { Credits } from './Credits'
 import { LangSelect, t, tx } from './i18n'
 
@@ -56,6 +57,9 @@ export function Connect({ onConnected, notice }: { onConnected: () => void; noti
             <button className="btn" type="submit" disabled={!pasted.trim()}>{t('Conectar')}</button>
           </form>
         </details>
+        <button className="btn demo-btn" onClick={() => { token.set(DEMO_TOKEN); onConnected() }}>
+          <Eye size={15} /> {t('Ver demonstração com dados fictícios')}
+        </button>
         <Credits />
       </div>
     </main>

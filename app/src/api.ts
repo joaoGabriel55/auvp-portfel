@@ -1,4 +1,5 @@
 import { t } from './i18n'
+import { DEMO_TOKEN, demoCall } from './demo'
 
 const BASE = 'https://ferramentas-backend.auvp.com.br'
 const TOKEN_KEY = 'auvp-token'
@@ -62,6 +63,7 @@ export const token = {
 }
 
 async function call<T>(method: string, path: string, data?: unknown): Promise<T> {
+  if (token.get() === DEMO_TOKEN) return demoCall(method, path, data) as Promise<T>
   const res = await fetch(`${BASE}/${path.replace(/^\//, '')}`, {
     method,
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token.get()}` },

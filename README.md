@@ -1,8 +1,30 @@
 # AUVP Portfel
 
-A redesign of the AUVP wallet page (`ferramentas.auvp.com.br/carteira`) for the "Diagrama do Cerrado" method. It is a standalone React app that reads and writes directly to your real AUVP account.
+A redesign proposal for the AUVP wallet page (`ferramentas.auvp.com.br/carteira`), built around the "Diagrama do Cerrado" method.
 
-> ⚠️ Every action (add/edit/delete asset, buy/sell, goals, questions) changes your real AUVP wallet. Nothing is mocked.
+![Carteira: asset classes compared with their targets](docs/screenshots/carteira.png)
+
+## Why this exists
+
+I'm an AUVP student, and I built this **voluntarily, in my free time**, to make the experience better for AUVP customers. The goal is to make the monthly routine faster and clearer: see where your wallet stands, decide where this month's contribution (aporte) goes, and record it, with nothing lost from the current page.
+
+- **Unofficial.** This is not an AUVP product, and AUVP has not endorsed it. The AUVP name and logo belong to AUVP and are used only so the proposal looks like the product it could become.
+- **Unpaid.** Nobody commissioned or paid for this work. It is offered to the AUVP team as a suggestion they are free to use.
+- **No data collected.** The app runs in your browser and talks only to the AUVP backend. Your token and wallet never go anywhere else.
+
+> ⚠️ When connected to a real account, every action (add/edit/delete asset, buy/sell, goals, questions) changes your real AUVP wallet. To look around safely, use the demo (below).
+
+## Screenshots
+
+All screenshots use the built-in demo wallet with sample data.
+
+| Monthly aporte plan | Targets per class |
+|---|---|
+| ![Aporte plan: shopping list with whole shares per asset](docs/screenshots/aporte.png) | ![Metas: target percentage per asset class](docs/screenshots/metas.png) |
+| **Diagrama questions** | **Connect screen** |
+| ![Perguntas: yes/no questions that set each asset's nota](docs/screenshots/perguntas.png) | ![Connect: bookmarklet, manual token, or demo](docs/screenshots/connect.png) |
+
+<p align="center"><img src="docs/screenshots/mobile.png" alt="Carteira on a phone" width="300"></p>
 
 ## Requirements
 
@@ -22,7 +44,9 @@ A redesign of the AUVP wallet page (`ferramentas.auvp.com.br/carteira`) for the 
    npm run dev
    ```
 3. Open the URL Vite prints (default http://localhost:5173).
-4. Connect your AUVP account (next section).
+4. Click **Ver demonstração com dados fictícios** to try it with sample data, or connect your AUVP account (next section).
+
+The demo wallet lives in memory. You can buy, sell, edit and run the aporte plan, and everything resets when you reload the page. Its aporte plan is a rough stand-in for AUVP's real calculation.
 
 ## Connect your AUVP account
 

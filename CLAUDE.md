@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-A redesign of the AUVP `/carteira` page, made as a pitch to the AUVP team. It is a Vite + React 19 + TypeScript app in `app/` that talks **directly to the real AUVP backend** (`https://ferramentas-backend.auvp.com.br`) with the user's own Bearer token. Every write changes the user's real wallet; there is no mock or staging backend.
+A redesign of the AUVP `/carteira` page, made as a pitch to the AUVP team. It is a Vite + React 19 + TypeScript app in `app/` that talks **directly to the real AUVP backend** (`https://ferramentas-backend.auvp.com.br`) with the user's own Bearer token. Every write changes the user's real wallet. The only safe sandbox is demo mode: token `demo` (the "Ver demonstração" button on the connect screen) makes `api.ts` route every call to the in-memory wallet in `demo.ts`. Use it for screenshots and manual testing. New API calls need a matching route there.
 
 - `PRODUCT.md`: users, product principles, and the full AUVP API surface the app relies on. Read it before touching `api.ts` or adding features.
 - `DESIGN.md` (+ `.impeccable/design.json`): the design system (tokens, components, do's and don'ts). Follow it for any UI change.

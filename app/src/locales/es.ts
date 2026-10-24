@@ -238,6 +238,7 @@ export const es: Record<string, string> = {
   'Prefiro colar o token manualmente': 'Prefiero pegar el token a mano',
   'No site da AUVP, abra o console (F12) e rode {code}. Cole o resultado aqui.': 'En el sitio de AUVP, abre la consola (F12) y ejecuta {code}. Pega el resultado aquí.',
   'Conectar': 'Conectar',
+  'Ver demonstração com dados fictícios': 'Ver demostración con datos ficticios',
 
   // Credits
   'Feito por': 'Hecho por',

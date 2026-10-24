@@ -238,6 +238,7 @@ export const en: Record<string, string> = {
   'Prefiro colar o token manualmente': 'I’d rather paste the token by hand',
   'No site da AUVP, abra o console (F12) e rode {code}. Cole o resultado aqui.': 'On the AUVP site, open the console (F12) and run {code}. Paste the result here.',
   'Conectar': 'Connect',
+  'Ver demonstração com dados fictícios': 'Try the demo with sample data',
 
   // Credits
   'Feito por': 'Made by',
