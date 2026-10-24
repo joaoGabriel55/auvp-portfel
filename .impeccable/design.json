@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T13:14:03.393Z",
+  "title": "Design System: AUVP Carteira",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ledger Night",
+        "canonical": "#12110e",
+        "tonalRamp": [
+          "oklch(12% 0.006 85)",
+          "oklch(17% 0.006 85)",
+          "oklch(22% 0.008 85)",
+          "oklch(29% 0.01 85)",
+          "oklch(40% 0.012 85)",
+          "oklch(58% 0.014 85)",
+          "oklch(76% 0.014 85)",
+          "oklch(94% 0.012 85)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Raised Umber",
+        "canonical": "#1a1915",
+        "tonalRamp": [
+          "oklch(15% 0.007 85)",
+          "oklch(20% 0.007 85)",
+          "oklch(25% 0.009 85)",
+          "oklch(32% 0.011 85)",
+          "oklch(44% 0.013 85)",
+          "oklch(60% 0.014 85)",
+          "oklch(78% 0.014 85)",
+          "oklch(95% 0.012 85)"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Upper Umber",
+        "canonical": "#23211c"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#2f2c25"
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#423e34"
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Ivory",
+        "canonical": "#efeae0"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#a39c8e"
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Faint",
+        "canonical": "#8f887b"
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "AUVP Gold",
+        "canonical": "#d9a852",
+        "tonalRamp": [
+          "oklch(22% 0.05 78)",
+          "oklch(32% 0.07 78)",
+          "oklch(44% 0.09 78)",
+          "oklch(56% 0.11 78)",
+          "oklch(67% 0.12 78)",
+          "oklch(76% 0.12 78)",
+          "oklch(85% 0.09 80)",
+          "oklch(95% 0.04 82)"
+        ]
+      },
+      "gold-hover": {
+        "role": "primary",
+        "displayName": "Lamp Gold",
+        "canonical": "#e6b75f"
+      },
+      "gold-soft": {
+        "role": "primary",
+        "displayName": "Gold Wash",
+        "canonical": "rgb(217 168 82 / 0.14)"
+      },
+      "gold-ink": {
+        "role": "primary",
+        "displayName": "Gold Ink",
+        "canonical": "#1c1406"
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Coral",
+        "canonical": "#ec7465",
+        "tonalRamp": [
+          "oklch(22% 0.06 28)",
+          "oklch(32% 0.09 28)",
+          "oklch(44% 0.12 28)",
+          "oklch(56% 0.14 28)",
+          "oklch(69% 0.15 28)",
+          "oklch(78% 0.11 28)",
+          "oklch(87% 0.07 28)",
+          "oklch(95% 0.03 28)"
+        ]
+      },
+      "danger-soft": {
+        "role": "tertiary",
+        "displayName": "Coral Wash",
+        "canonical": "rgb(236 116 101 / 0.12)"
+      },
+      "ok": {
+        "role": "tertiary",
+        "displayName": "Sage",
+        "canonical": "#7ccf9a",
+        "tonalRamp": [
+          "oklch(22% 0.05 155)",
+          "oklch(32% 0.07 155)",
+          "oklch(44% 0.09 155)",
+          "oklch(56% 0.11 155)",
+          "oklch(68% 0.12 155)",
+          "oklch(79% 0.12 155)",
+          "oklch(88% 0.07 155)",
+          "oklch(95% 0.03 155)"
+        ]
+      },
+      "class-acoes-nacionais": {
+        "role": "secondary",
+        "displayName": "Ações Nacionais Jade",
+        "canonical": "#57c9a0"
+      },
+      "class-acoes-internacionais": {
+        "role": "secondary",
+        "displayName": "Ações Internacionais Sky",
+        "canonical": "#6cb8e8"
+      },
+      "class-fiis": {
+        "role": "secondary",
+        "displayName": "FII Straw",
+        "canonical": "#e3cb5a"
+      },
+      "class-reits": {
+        "role": "secondary",
+        "displayName": "REIT Orchid",
+        "canonical": "#e07fc8"
+      },
+      "class-cripto": {
+        "role": "secondary",
+        "displayName": "Cripto Periwinkle",
+        "canonical": "#8597f2"
+      },
+      "class-renda-fixa": {
+        "role": "secondary",
+        "displayName": "Renda Fixa Amber",
+        "canonical": "#e8964f"
+      },
+      "class-renda-fixa-internacional": {
+        "role": "secondary",
+        "displayName": "Renda Fixa Internacional Lilac",
+        "canonical": "#b9a0ee"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Patrimônio total only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Card, panel and page titles (1.375rem to 1.75rem)."
+      },
+      "figure-input": {
+        "displayName": "Figure input",
+        "purpose": "Aporte amount and plan total; tabular."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section heads such as Classes de ativos."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text at the 15px root; hints cap at 62 to 75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, summary terms, chips; muted."
+      },
+      "column-head": {
+        "displayName": "Column head",
+        "purpose": "Ledger and metas table heads; sentence case, muted."
+      }
+    },
+    "shadows": [
+      {
+        "name": "float",
+        "value": "0 12px 32px -8px rgb(0 0 0 / 0.55), 0 2px 6px rgb(0 0 0 / 0.3)",
+        "purpose": "Floating right panel, modal dialog, toast, sticky metas footer. Never in the ledger column."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgb(217 168 82 / 0.14)",
+        "purpose": "Inputs, search and money field on focus, with a gold border."
+      },
+      {
+        "name": "tick-knockout",
+        "value": "0 0 0 2px #1a1915",
+        "purpose": "Separates the gold meta tick from the bar fill."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-house",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All transitions and entrances."
+      },
+      {
+        "name": "state",
+        "value": "150ms",
+        "purpose": "Hover, border, press transitions."
+      },
+      {
+        "name": "panel-slide",
+        "value": "260ms",
+        "purpose": "Right panel enters from 16px right."
+      },
+      {
+        "name": "dialog-pop",
+        "value": "220ms",
+        "purpose": "Modal and toast entrances."
+      },
+      {
+        "name": "bar-grow",
+        "value": "500ms to 600ms",
+        "purpose": "Meta bar fill and hatched aporte extension."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "ledger-stack",
+        "value": "900px"
+      },
+      {
+        "name": "compact",
+        "value": "640px",
+        "purpose": "Right panel becomes a full-screen sheet."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Gold fill, one per region: Calcular, Salvar alterações, Confirmar compras.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Calcular</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border: 1px solid #423e34; border-radius: 8px; background: #23211c; color: #efeae0; font-family: 'Geist Variable', system-ui, sans-serif; font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: background 150ms cubic-bezier(0.16,1,0.3,1), border-color 150ms cubic-bezier(0.16,1,0.3,1), transform 150ms cubic-bezier(0.16,1,0.3,1); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #d9a852; outline-offset: 2px; } .ds-btn-primary { background: #d9a852; border-color: #d9a852; color: #1c1406; } .ds-btn-primary:hover { background: #e6b75f; border-color: #e6b75f; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Raised umber with strong hairline; toolbar actions like Importar CSV, Adicionar ativo.",
+      "html": "<button class=\"ds-btn2\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>Adicionar ativo</button>",
+      "css": ".ds-btn2 { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border: 1px solid #423e34; border-radius: 8px; background: #23211c; color: #efeae0; font-family: 'Geist Variable', system-ui, sans-serif; font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: border-color 150ms cubic-bezier(0.16,1,0.3,1); } .ds-btn2:hover { border-color: #a39c8e; } .ds-btn2:active { transform: translateY(1px); } .ds-btn2:focus-visible { outline: 2px solid #d9a852; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Transparent, muted; low-emphasis actions.",
+      "html": "<button class=\"ds-btn-ghost\">Cancelar</button>",
+      "css": ".ds-btn-ghost { height: 36px; padding: 0 14px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: #a39c8e; font-family: 'Geist Variable', system-ui, sans-serif; font-weight: 600; font-size: 0.875rem; cursor: pointer; } .ds-btn-ghost:hover { color: #efeae0; border-color: #423e34; } .ds-btn-ghost:focus-visible { outline: 2px solid #d9a852; outline-offset: 2px; }"
+    },
+    {
+      "name": "Money Field",
+      "kind": "input",
+      "refersTo": "money-field",
+      "description": "The aporte amount well: muted R$ prefix, large tabular figure, gold focus.",
+      "html": "<label class=\"ds-money\"><span class=\"ds-money-prefix\">R$</span><input class=\"ds-money-input\" value=\"1.000,00\" inputmode=\"decimal\" aria-label=\"Valor do aporte\"></label>",
+      "css": ".ds-money { display: flex; align-items: center; gap: 8px; height: 52px; padding: 0 16px; max-width: 360px; border: 1px solid #423e34; border-radius: 8px; background: #12110e; font-family: 'Geist Variable', system-ui, sans-serif; } .ds-money:focus-within { border-color: #d9a852; box-shadow: 0 0 0 3px rgb(217 168 82 / 0.14); } .ds-money-prefix { color: #a39c8e; font-weight: 600; } .ds-money-input { flex: 1; min-width: 0; border: 0; background: none; outline: none; color: #efeae0; font: inherit; font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Ground-filled well with label above.",
+      "html": "<label class=\"ds-field\"><span>Quantidade</span><input class=\"ds-input\" value=\"352,32881\"></label>",
+      "css": ".ds-field { display: grid; gap: 6px; font-family: 'Geist Variable', system-ui, sans-serif; } .ds-field > span { font-size: 0.8125rem; font-weight: 600; color: #a39c8e; } .ds-input { height: 38px; padding: 0 12px; border: 1px solid #423e34; border-radius: 8px; background: #12110e; color: #efeae0; font: inherit; font-variant-numeric: tabular-nums; transition: border-color 150ms cubic-bezier(0.16,1,0.3,1); } .ds-input:hover { border-color: #a39c8e; } .ds-input:focus { outline: none; border-color: #d9a852; box-shadow: 0 0 0 3px rgb(217 168 82 / 0.14); }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill toggle with count; pressed state goes gold.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"false\">Fora do cálculo <span class=\"ds-chip-count\">9</span></button> <button class=\"ds-chip\" aria-pressed=\"true\">Fora do cálculo <span class=\"ds-chip-count\">9</span></button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid #423e34; background: transparent; color: #a39c8e; font-family: 'Geist Variable', system-ui, sans-serif; font-size: 0.8125rem; font-weight: 600; cursor: pointer; } .ds-chip:hover { color: #efeae0; } .ds-chip:focus-visible { outline: 2px solid #d9a852; outline-offset: 2px; } .ds-chip[aria-pressed='true'] { background: rgb(217 168 82 / 0.14); border-color: #d9a852; color: #d9a852; } .ds-chip-count { font-size: 0.75rem; color: #8f887b; font-variant-numeric: tabular-nums; } .ds-chip[aria-pressed='true'] .ds-chip-count { color: #d9a852; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Sticky 60px bar; text tabs with a 2px gold underline on the current tab.",
+      "html": "<nav class=\"ds-topbar\"><strong class=\"ds-brand\">AUVP <span>Carteira</span></strong><a class=\"ds-tab\" aria-current=\"page\" href=\"#\">Carteira</a><a class=\"ds-tab\" href=\"#\">Metas</a><a class=\"ds-tab\" href=\"#\">Perguntas</a></nav>",
+      "css": ".ds-topbar { display: flex; align-items: stretch; gap: 4px; height: 60px; padding: 0 24px; background: rgb(18 17 14 / 0.92); border-bottom: 1px solid #2f2c25; font-family: 'Geist Variable', system-ui, sans-serif; } .ds-brand { align-self: center; margin-right: 28px; color: #efeae0; } .ds-brand span { color: #a39c8e; font-weight: 600; } .ds-tab { position: relative; display: flex; align-items: center; padding: 0 14px; color: #a39c8e; font-weight: 600; text-decoration: none; } .ds-tab:hover, .ds-tab[aria-current='page'] { color: #efeae0; } .ds-tab:focus-visible { outline: 2px solid #d9a852; outline-offset: -2px; } .ds-tab[aria-current='page']::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: -1px; height: 2px; background: #d9a852; border-radius: 2px 2px 0 0; }"
+    },
+    {
+      "name": "Class Ledger Row",
+      "kind": "custom",
+      "refersTo": "ledger-row",
+      "description": "Signature: class swatch plus label, value, meta bar with gold tick and hatched aporte extension, atual, meta in gold, drift.",
+      "html": "<div class=\"ds-ledger\"><button class=\"ds-lrow\"><span class=\"ds-cname\"><i class=\"ds-sw\" style=\"background:#57c9a0\"></i>Ações Nacionais <small>12</small></span><span class=\"ds-num\">R$ 42.400</span><span class=\"ds-bar\"><span class=\"ds-fill\" style=\"width:32%;background:#57c9a0\"></span><span class=\"ds-after\" style=\"left:32%;width:4%\"></span><span class=\"ds-tick\" style=\"left:44%\"></span></span><span class=\"ds-num\">14,7%<em>→ 14,9%</em></span><span class=\"ds-num ds-meta\">20,0%</span><span class=\"ds-num ds-drift\">↓ −5,3 p.p.</span></button></div>",
+      "css": ".ds-ledger { border: 1px solid #2f2c25; border-radius: 12px; overflow: hidden; background: #1a1915; font-family: 'Geist Variable', system-ui, sans-serif; color: #efeae0; } .ds-lrow { display: grid; grid-template-columns: minmax(180px,1.3fr) 96px minmax(80px,1.8fr) 72px 56px 96px; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 0 20px; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: background 150ms cubic-bezier(0.16,1,0.3,1); } .ds-lrow:hover { background: #23211c; } .ds-lrow:focus-visible { outline: 2px solid #d9a852; outline-offset: -2px; } .ds-cname { display: flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; } .ds-cname small { font-size: 0.75rem; color: #8f887b; } .ds-sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; } .ds-num { font-variant-numeric: tabular-nums; text-align: right; } .ds-num em { display: block; font-style: normal; font-size: 0.75rem; font-weight: 600; color: #d9a852; } .ds-meta { color: #d9a852; font-weight: 600; } .ds-drift { font-size: 0.875rem; font-weight: 600; } .ds-bar { position: relative; display: block; height: 10px; border-radius: 3px; background: #23211c; } .ds-fill { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 3px; } .ds-after { position: absolute; top: 0; bottom: 0; border-radius: 0 3px 3px 0; background: repeating-linear-gradient(-45deg, #d9a852 0 2px, rgb(217 168 82 / 0.25) 2px 5px); } .ds-tick { position: absolute; top: -5px; bottom: -5px; width: 3px; margin-left: -1.5px; border-radius: 2px; background: #d9a852; box-shadow: 0 0 0 2px #1a1915; }"
+    },
+    {
+      "name": "Nota Badge",
+      "kind": "chip",
+      "refersTo": "nota-badge",
+      "description": "Tabular nota de força; coral wash at or below zero.",
+      "html": "<span class=\"ds-nota\">7</span> <span class=\"ds-nota ds-nota-out\">-1</span>",
+      "css": ".ds-nota { display: inline-grid; place-items: center; min-width: 30px; height: 22px; padding: 0 6px; border-radius: 5px; background: #23211c; color: #efeae0; font-family: 'Geist Variable', system-ui, sans-serif; font-size: 0.8125rem; font-weight: 700; font-variant-numeric: tabular-nums; } .ds-nota-out { background: rgb(236 116 101 / 0.12); color: #ec7465; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Class Ledger",
+    "overview": "The wallet reads as an accountant's ledger lit by one gold lamp. A warm near-black ground carries ivory text and hairline rules; seven asset classes sit as rows, each stating its value, its current share, a bar with a gold meta tick, and its drift in percentage points. Gold is scarce on purpose: it marks where the investor is headed (metas), what to do next (primary actions), what is selected, and what this month's aporte adds. Everything else stays ivory, muted or faint.\n\nDensity is high but calm. Rows are 60px for classes and 42px for holdings, figures are tabular and right-aligned, and structure comes from 1px hairlines rather than boxes. Editing never leaves the ledger: an asset editor or the aporte plan opens in a single right panel that floats over the page without reflowing it, and only two jobs (adding an asset, importing CSV) take a native modal dialog.\n\nThe world is AUVP's: the original horizontal AUVP logo and favicon, gold on near-black, set in Geist rather than AUVP's legacy Montserrat.",
+    "keyCharacteristics": [
+      "Warm near-black ground with two tonal raised layers; no cards inside cards.",
+      "Gold reserved for metas, primary actions, selection and aporte figures.",
+      "Every figure in tabular numerals.",
+      "Seven muted class hues as small swatches, always beside a text label.",
+      "One floating right panel at a time, never reflowing the page; native `<dialog>` for add and import.",
+      "Hairline rules (1px) as the main structural device; 8px control radius, 12px container radius."
+    ],
+    "rules": [
+      {
+        "name": "The Gold Lamp Rule",
+        "body": "Gold marks only metas, primary actions, selection and aporte figures. If a gold element is none of these, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Named Hue Rule",
+        "body": "A class hue never stands alone: every swatch or bar fill sits in the same row as the class's text label.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Figure Rule",
+        "body": "Every number (R$, %, p.p., quantities, notas, counts) uses `font-variant-numeric: tabular-nums` and right-aligns in its column.",
+        "section": "typography"
+      },
+      {
+        "name": "The Overlay Panel Rule",
+        "body": "The layout never reflows for the right panel. It floats above the ledger and summary, which keep their width and stay usable underneath.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat Ledger Rule",
+        "body": "Nothing in the ledger column casts a shadow. Only floating layers (panel, dialog, toast, sticky footer) do.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use gold only for metas, primary actions, selection and aporte figures (The Gold Lamp Rule).",
+      "**Do** set every figure in tabular numerals, right-aligned.",
+      "**Do** pair every class hue with its text label.",
+      "**Do** open asset editing and the aporte plan in the single floating right panel, one at a time, leaving the layout beneath unchanged (The Overlay Panel Rule).",
+      "**Do** use native `<dialog>` for adding an asset and importing CSV.",
+      "**Do** separate rows with 1px hairlines and lift floating layers only with the Float shadow.",
+      "**Do** honor `prefers-reduced-motion`; motion uses `cubic-bezier(0.16, 1, 0.3, 1)` at 150 to 600ms."
+    ],
+    "donts": [
+      "**Don't** identify an asset class by color alone.",
+      "**Don't** put a card inside a card; nest with tonal bands and hairlines instead.",
+      "**Don't** use gold for decoration, status or class identity.",
+      "**Don't** open modals for edits that the right panel can hold.",
+      "**Don't** resize or reflow the ledger, summary or aporte card when the right panel opens.",
+      "**Don't** replace the original AUVP logo or favicon, or swap Geist for Montserrat."
+    ]
+  }
+}
