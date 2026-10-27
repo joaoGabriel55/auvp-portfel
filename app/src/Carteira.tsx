@@ -1,7 +1,7 @@
 import { Fragment, useCallback, useMemo, useState } from 'react'
-import { ArrowDown, ArrowUp, ChevronRight, Minus, Plus, Search, Trash2, Upload, X } from 'lucide-react'
+import { ArrowDown, ArrowUp, Check, ChevronRight, Minus, Plus, Search, Trash2, Upload, X } from 'lucide-react'
 import { api, type Asset, type User } from './api'
-import { classOf, display, fmt, ledger, type ClassRow } from './domain'
+import { classOf, display, fmt, ledger, parseNum, type ClassRow } from './domain'
 import { AssetDrawer } from './AssetDrawer'
 import { Aporte } from './Aporte'
 import { ImportRF } from './ImportRF'
@@ -110,14 +110,15 @@ export function Carteira({ user, perfil, run, onError }: Props) {
                 {isOpen && (
                   <div className="holdings">
                     {list.length ? list.map(a => (
-                      <button key={a._id} className="hrow" aria-current={drawerAsset && drawerAsset !== 'new' && drawerAsset._id === a._id ? 'true' : undefined} onClick={() => select(a)}>
-                        <span className="h-name">{a.name}{a.alocation && <span className="muted"> · {a.alocation}</span>}</span>
-                        <span className="r num muted">{c.fixed ? '' : t('{n} un', { n: fmt.num(a.amount) })}</span>
+                      // a div, not a button: the quantity cell holds its own controls; the name button keeps keyboard access
+                      <div key={a._id} className="hrow" aria-current={drawerAsset && drawerAsset !== 'new' && drawerAsset._id === a._id ? 'true' : undefined} onClick={() => select(a)}>
+                        <button className="h-name" onClick={e => { e.stopPropagation(); select(a) }}>{a.name}{a.alocation && <span className="muted"> · {a.alocation}</span>}</button>
+                        {c.fixed ? <span /> : <Qty asset={a} run={run} />}
                         <span className="r num">{fmt.brl(a.value)}</span>
                         <span className="r num muted">{r.total ? fmt.pct((a.value / r.total) * 100) : '—'}</span>
                         <span className="r"><Nota v={a.strength} /></span>
                         <span className="r num aporte-cell">{byAsset.get(a._id) ? `+ ${fmt.brl(byAsset.get(a._id)!)}` : ''}</span>
-                      </button>
+                      </div>
                     )) : (
                       <div className="hrow-empty">
                         {t('Nenhum ativo de {classe}.', { classe: c.label })}{' '}
@@ -147,6 +148,35 @@ export function Carteira({ user, perfil, run, onError }: Props) {
       )}
       {importing && <ImportRF user={user} run={run} onClose={() => setImporting(false)} />}
     </div>
+  )
+}
+
+/** inline quantity editor; the change goes through buy/sell so the server reprices the position */
+function Qty({ asset, run }: { asset: Asset; run: Run }) {
+  const [draft, setDraft] = useState<string | null>(null)
+  const [busy, setBusy] = useState(false)
+  if (draft === null) return (
+    <button className="r num muted qty-btn" title={t('Ajustar quantidade')} onClick={e => { e.stopPropagation(); setDraft(String(asset.amount).replace('.', ',')) }}>
+      {t('{n} un', { n: fmt.num(asset.amount) })}
+    </button>
+  )
+  const next = parseNum(draft)
+  const delta = Math.round((next - asset.amount) * 1e8) / 1e8
+  const valid = next > 0 && delta !== 0
+  const confirm = async () => {
+    if (!valid || busy) return
+    setBusy(true)
+    const ok = await run(() => (delta > 0 ? api.buy(asset._id, delta) : api.sell(asset._id, -delta)), t('Quantidade de {nome} atualizada', { nome: asset.name }))
+    setBusy(false)
+    if (ok) setDraft(null)
+  }
+  return (
+    <span className="qty-edit" onClick={e => e.stopPropagation()}>
+      <input className="input num" inputMode="decimal" autoFocus value={draft} disabled={busy} aria-label={t('Quantidade de {nome}', { nome: asset.name })}
+        onChange={e => setDraft(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') confirm(); if (e.key === 'Escape') setDraft(null) }} />
+      <button className="icon-btn sm" onClick={confirm} disabled={!valid || busy} aria-label={t('Confirmar')}><Check size={14} /></button>
+      <button className="icon-btn sm" onClick={() => setDraft(null)} disabled={busy} aria-label={t('Cancelar')}><X size={14} /></button>
+    </span>
   )
 }
 

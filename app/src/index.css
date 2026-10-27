@@ -224,7 +224,9 @@ select.input { appearance: none; background-image: linear-gradient(45deg, transp
 .plan-summary strong { color: var(--text); }
 .plan-groups { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .plan-group-head { display: flex; justify-content: space-between; align-items: center; padding: 0 2px 6px; font-size: 0.875rem; font-weight: 600; color: var(--muted); }
-.plan-group-head .class-name { color: var(--text); }
+.plan-group-head .class-name { color: var(--text); cursor: pointer; }
+.plan-group-head .pline-check { width: 28px; }
+.plan-all { justify-content: flex-start; gap: 10px; border-bottom: 1px solid var(--line); cursor: pointer; }
 .plan-lines { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .pline { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto 112px; gap: 12px; align-items: center; padding: 8px 2px; min-height: 52px; transition: opacity 150ms var(--ease); }
 .pline { border-bottom: 1px solid var(--line); }
@@ -314,8 +316,12 @@ select.input { appearance: none; background-image: linear-gradient(45deg, transp
 }
 .hrow:hover { background: var(--surface); }
 .hrow[aria-current='true'] { background: var(--gold-soft); }
-.h-name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.h-name { border: 0; background: none; padding: 0; color: inherit; font: inherit; text-align: left; cursor: pointer; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .h-name .muted { font-weight: 500; }
+.qty-btn { justify-self: end; border: 0; background: none; padding: 2px 6px; margin-right: -6px; border-radius: 5px; color: var(--muted); font: inherit; cursor: text; }
+.qty-btn:hover { background: var(--surface-2); color: var(--text); }
+.qty-edit { display: flex; align-items: center; justify-content: flex-end; gap: 2px; cursor: default; }
+.qty-edit .input { width: 72px; height: 28px; padding: 0 6px; text-align: right; }
 .aporte-cell { color: var(--gold); font-weight: 700; }
 .hrow-empty { padding: 12px 20px 12px 66px; color: var(--muted); font-size: 0.9rem; }
 

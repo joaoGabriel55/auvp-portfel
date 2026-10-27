@@ -37,7 +37,7 @@ export function Aporte({ user, onPreview, run, onError, open, onOpenChange, slot
   const [progress, setProgress] = useState(0)
   const [copied, setCopied] = useState(false)
   const value = parseNum(amount)
-  const done = !!lines?.length && lines.filter(l => l.on).every(l => l.status === 'done')
+  const done = !!lines?.some(l => l.on) && lines.filter(l => l.on).every(l => l.status === 'done')
 
   const calculate = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -52,7 +52,7 @@ export function Aporte({ user, onPreview, run, onError, open, onOpenChange, slot
         const type = a?.type ?? s.assetType ?? 'rendafixa'
         const fixed = !!classOf(type).fixed
         return {
-          s, fixed, on: true, qty: s.suggestionQuantity,
+          s, fixed, on: false, qty: s.suggestionQuantity,
           name: a?.name ?? s.assetName ?? '—',
           price: fixed ? s.suggestionValue : s.currentPrice || s.suggestionValue / s.suggestionQuantity,
         }
@@ -80,6 +80,16 @@ export function Aporte({ user, onPreview, run, onError, open, onOpenChange, slot
   })).filter(g => g.lines.length), [lines, user.assets])
 
   const patch = (id: string, p: Partial<Line>) => setLines(ls => ls && ls.map(l => (l.s.assetId === id ? { ...l, ...p } : l)))
+  // registered lines stay checked
+  const toggleAll = (ids: Set<string>, on: boolean) => setLines(ls => ls && ls.map(l => (ids.has(l.s.assetId) && l.status !== 'done' ? { ...l, on } : l)))
+  const groupToggle = (gl: Line[], label: string) => {
+    const n = gl.filter(l => l.on).length
+    return (
+      <input type="checkbox" checked={n === gl.length} ref={el => { if (el) el.indeterminate = n > 0 && n < gl.length }}
+        disabled={busy === 'save' || gl.every(l => l.status === 'done')} aria-label={label}
+        onChange={e => toggleAll(new Set(gl.map(l => l.s.assetId)), e.target.checked)} />
+    )
+  }
 
   const register = async () => {
     const todo = chosen.filter(l => l.status !== 'done')
@@ -149,12 +159,18 @@ export function Aporte({ user, onPreview, run, onError, open, onOpenChange, slot
                 {tx('{v} acima do valor informado. Reduza quantidades ou desmarque compras.', { v: <strong className="num">{fmt.brl(-leftover)}</strong> })}
               </p>
             )}
-            {leftover > 0.009 && (
+            {!chosen.length && <p className="muted">{t('Marque as compras que vai fazer: uma a uma, por classe ou todas.')}</p>}
+            {chosen.length > 0 && leftover > 0.009 && (
               <p className="muted">
                 {tx('Sobram {v} porque ações e fundos só são comprados em cotas inteiras.', { v: <strong className="num">{fmt.brl(leftover)}</strong> })}
               </p>
             )}
           </div>
+
+          <label className="plan-group-head plan-all">
+            <span className="pline-check">{groupToggle(lines, t('Selecionar todas'))}</span>
+            <span className="class-name">{t('Selecionar todas')}</span>
+          </label>
 
           <ol className="plan-groups">
             {groups.map(({ c, lines: gl }) => {
@@ -162,7 +178,8 @@ export function Aporte({ user, onPreview, run, onError, open, onOpenChange, slot
               return (
                 <li key={c.type} className="plan-group">
                   <div className="plan-group-head">
-                    <span className="class-name"><span className="swatch" style={{ background: c.color }} aria-hidden />{c.label}</span>
+                    <label className="class-name">
+                      <span className="pline-check">{groupToggle(gl, t('Selecionar {classe}', { classe: c.label }))}</span><span className="swatch" style={{ background: c.color }} aria-hidden />{c.label}</label>
                     <span className="num">{fmt.brl(sub)}</span>
                   </div>
                   <ul className="plan-lines">
